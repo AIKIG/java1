@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Sayilar {
+    public static void main(String[] args) {
+        // Basit bir ArrayList
+        List<Integer> sayilar = Arrays.asList(5, 10, 15, 20, 25, 30);
+
+        // dropWhile: 15'ten küçük sayıları at
+        System.out.println("dropWhile: 15'ten küçükleri at:");
+        sayilar.stream()
+                .dropWhile(sayi -> sayi < 15)
+                .forEach(System.out::println);
+
+        // skip: İlk 2 sayıyı at
+        System.out.println("\nskip: İlk 2 sayıyı at:");
+        sayilar.stream()
+                .skip(2)
+                .forEach(System.out::println);
+
+        // limit: İlk 3 sayıyı al
+        System.out.println("\nlimit: İlk 3 sayıyı al:");
+        sayilar.stream()
+                .limit(3)
+                .forEach(System.out::println);
+
+        // filter: 20'den büyük sayıları al
+        System.out.println("\nfilter: 20'den büyükleri al:");
+        sayilar.stream()
+                .filter(sayi -> sayi > 20)
+                .forEach(System.out::println);
+    }
+}
